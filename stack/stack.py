@@ -15,16 +15,37 @@ import sys
 sys.path.append('../')
 from singly_linked_list.singly_linked_list import LinkedList
 
+# class Stack:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = []
+
+#     def __len__(self):
+#         return self.size
+
+#     def push(self, value):
+#         self.storage.append(value)
+#         self.size += 1
+#         return value
+
+#     def pop(self):
+#         if self.size == 0: 
+#             return None
+#         else: 
+#             x = self.storage.pop()
+#             self.size -= 1
+#             return x
+
 class Stack:
     def __init__(self):
         self.size = 0
-        self.storage = []
+        self.storage = LinkedList()
 
     def __len__(self):
         return self.size
 
     def push(self, value):
-        self.storage.append(value)
+        self.storage.add_to_tail(value)
         self.size += 1
         return value
 
@@ -32,6 +53,6 @@ class Stack:
         if self.size == 0: 
             return None
         else: 
-            x = self.storage.pop()
+            x = self.storage.remove_tail()
             self.size -= 1
             return x
