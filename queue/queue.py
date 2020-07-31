@@ -64,13 +64,3 @@ class Queue:
             self.size -= 1
             return x
 
-q = Queue()
-q.enqueue(100)
-q.enqueue(101)
-q.enqueue(105)
-
-print(q)
-
-print(q.dequeue())
-
-print(q)
